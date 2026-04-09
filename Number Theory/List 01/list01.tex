@@ -1,0 +1,82 @@
+\documentclass[
+  12pt,
+  openright,
+  a4paper,
+  twoside,
+  english,
+  brazil,
+]{article}
+
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage[top=0.5cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+
+\newcommand{\cqd}{\hfill $\square$}
+\newenvironment{solution}[1][]{\noindent\textbf{Solução#1:} }{\cqd}
+\newcounter{ex}
+\newtheorem{exercise}[ex]{Exercício}
+
+% -----------------------------------------------------------------------------
+
+\title{Teoria dos Números: Lista 01}
+\author{GIPMAT 2026 - Zoeh}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{exercise}
+  Prove por indução. \\
+  Seja $a, b\in A$ e $m, n\in\mathbb N^*$. Então:
+
+  \begin{enumerate}
+    \item[(a)] $(a^m)^n=a^{m\cdot n}$
+    \item[(b)] $(a\cdot b)^n=a^n \cdot b^n$
+  \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+  a
+\end{solution}
+
+\begin{exercise}
+  Mostre as seguintes fórmulas por indução
+
+  \begin{enumerate}
+    \item[(a)] $1^2+2^2+...+n^2=\frac{n(n+1)(2n+1)}{6}$
+    \item[(b)] $\frac{1}{1\cdot 2}+\frac{1}{2\cdot
+      3}+...+\frac{1}{n(n+1)}=\frac{n}{n+1}$
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Uma progressão aritimética (PA) é uma sequência de números reais
+  ($a_n$) tal que $a_1$ é dado e, para todo $n\in\mathbb N$, tem-se
+
+  {\center$a_{n-1}=a_n+r$\endcenter}
+
+  \hbox{onde $r$ é um número real fixo chamado razão}
+
+  \begin{enumerate}
+    \item[(a)] Mostre que $a_n=a_1+(n-1)r$
+    \item[(b)] Se $a_n=a_1+a_2+...+a_n$. Mostre que
+      $S_n=na_n+\frac{n(n-1)r}{2}=\frac{(a_1+a_n)n}{2}$
+  \end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+  Prove por indução.
+
+  \begin{enumerate}
+    \item[(a)] $2^n>n$ para todo $n\in\mathbb N$
+  \end{enumerate}
+\end{exercise}
+
+\end{document}
