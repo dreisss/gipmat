@@ -15,12 +15,10 @@
 \usepackage[portuguese]{babel}
 \usepackage[T1]{fontenc}
 
-\usepackage[top=0.5cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{enumerate}
 
 \newcommand{\cqd}{\hfill $\square$}
-\newenvironment{solution}[1][]{\noindent\textbf{Solução#1:} }{\cqd}
-\newcounter{ex}
-\newtheorem{exercise}[ex]{Exercício}
 
 % -----------------------------------------------------------------------------
 
@@ -32,51 +30,287 @@
 
 \maketitle
 
-\begin{exercise}
-  Prove por indução. \\
-  Seja $a, b\in A$ e $m, n\in\mathbb N^*$. Então:
+\begin{enumerate}[\bfseries  1.]
 
-  \begin{enumerate}
-    \item[(a)] $(a^m)^n=a^{m\cdot n}$
-    \item[(b)] $(a\cdot b)^n=a^n \cdot b^n$
-  \end{enumerate}
-\end{exercise}
+  \item Prove por indução.
 
-\begin{solution}
-  a
-\end{solution}
+    Seja $a, b\in A$ e $m, n\in\mathbb N^*$. Então:
 
-\begin{exercise}
-  Mostre as seguintes fórmulas por indução
+    \begin{enumerate}[\bfseries (a)]
+      \item $(a^m)^n=a^{m\cdot n}$
 
-  \begin{enumerate}
-    \item[(a)] $1^2+2^2+...+n^2=\frac{n(n+1)(2n+1)}{6}$
-    \item[(b)] $\frac{1}{1\cdot 2}+\frac{1}{2\cdot
-      3}+...+\frac{1}{n(n+1)}=\frac{n}{n+1}$
-  \end{enumerate}
-\end{exercise}
+        \textbf{Solução:}
 
-\begin{exercise}
-  Uma progressão aritimética (PA) é uma sequência de números reais
-  ($a_n$) tal que $a_1$ é dado e, para todo $n\in\mathbb N$, tem-se
+        Seja $m$ um natural fixo e $S=\{n\in\mathbb N:(a^m)^n=a^{m\cdot n}\}$
 
-  {\center$a_{n-1}=a_n+r$\endcenter}
+        \begin{enumerate}[1.]
+          \item $(a^m)^1= a^m=a^{m\cdot 1}$. Portanto $1\in S$
+          \item Considere $k\in S$, de modo que $(a^m)^k=a^{m\cdot k}$
 
-  \hbox{onde $r$ é um número real fixo chamado razão}
+            Podemos multiplicar ambos os lados por $a^m$:
 
-  \begin{enumerate}
-    \item[(a)] Mostre que $a_n=a_1+(n-1)r$
-    \item[(b)] Se $a_n=a_1+a_2+...+a_n$. Mostre que
-      $S_n=na_n+\frac{n(n-1)r}{2}=\frac{(a_1+a_n)n}{2}$
-  \end{enumerate}
-\end{exercise}
+            $$
+            (a^m)^k\cdot (a^m)=a^{m\cdot k}\cdot a^m
+            $$
+            $$
+            (a^m)^{k+1}=a^{m\cdot k+m}=a^{m(k+1)}\implies
+            (a^m)^{s(k)}=a^{m\cdot s(k)}
+            $$
 
-\begin{exercise}
-  Prove por indução.
+            Logo, $s(k)\in S$. E pelo Princípio da Indução Finita a
+            propriedade é verdadeira para todos os números naturais.
 
-  \begin{enumerate}
-    \item[(a)] $2^n>n$ para todo $n\in\mathbb N$
-  \end{enumerate}
-\end{exercise}
+        \end{enumerate}
+
+        Agora considere $n$ um natural fixo e $S=\{m\in\mathbb
+        N:(a^m)^n=a^{m\cdot n}\}$
+
+        \begin{enumerate}[1.]
+          \item $(a^1)^n= a^n=a^{1\cdot n}$. Portanto $1\in S$
+          \item Considere $k\in S$, de modo que $(a^k)^n=a^{k\cdot n}$
+
+            Utilizando a propriedade (b):
+
+            $$
+            (a^{k+1})^n=(a^k\cdot a)^n=(a^k)^n\cdot a^n
+            $$
+
+            E aplicando a hipótese:
+
+            $$
+            (a^{s(k)})^n=a^{k\cdot n}\cdot a^n=a^{k\cdot n+n}=a^{n\cdot s(k)}
+            $$
+
+            Logo, $s(k)\in S$. E pelo Princípio da Indução Finita a
+            propriedade é verdadeira para todos os números naturais.
+
+        \end{enumerate}
+
+      \item $(a\cdot b)^n=a^n \cdot b^n$
+
+        \textbf{Solução:}
+
+        Considere o conjunto $S=\{n\in\mathbb N^*:(a\cdot b)^n=a^n\cdot b^n\}$
+
+        \begin{enumerate}[$1.$]
+          \item Para $n=1$, $(a\cdot b)^1=a\cdot b=a^1\cdot b^1$.
+            Portanto $1\in S$
+
+          \item Suponha que $k\in S$ tal que $(a\cdot b)^k=a^k\cdot b^k$.
+
+            Multiplicamos ambos os lados por $(a\cdot b)$ e desenvolvendo:
+
+            $$
+            (a\cdot b)^k(a\cdot b)=a^k\cdot b^k\cdot a\cdot b
+            $$
+
+            $$
+            (a\cdot b)^{k+1}=(a^k\cdot a)\cdot
+            (b^k\cdot b)=a^{k+1}\cdot b^{k+1}
+            $$
+
+            $$
+            (a\cdot b)^{s(k)}=(a^k\cdot a)\cdot
+            (b^k\cdot b)=a^{s(k)}\cdot b^{s(k)}
+            $$
+
+            Portanto $s(k)\in S$. E pelo Princípio da Indução Finita,
+            é verdadeiro para todos os números naturais.
+
+        \end{enumerate}
+    \end{enumerate}
+
+  \item Mostre as seguintes fórmulas por indução
+
+    \begin{enumerate}[\bfseries (a)]
+      \item $1^2+2^2+...+n^2=\frac{n(n+1)(2n+1)}{6}$
+
+        \textbf{Solução:}
+
+        Considere o conjunto $S=\{n\in\mathbb
+        N:1^2+2^2+...+n^2=\frac{n(n+1)(2n+1)}{6}\}$
+
+        \begin{enumerate}[$1.$]
+          \item Para $n=1$, $\frac{1(1+1)(2\cdot 1+1)}{6}=1$. Portanto $1\in S$
+
+          \item Suponha que $n\in S$ tal que
+            $1^2+2^2+...+n^2=\frac{n(n+1)(2n+1)}{6}$.
+
+            Podemos somar $(n+1)^2$ em ambos os lados:
+
+            $$
+            1^2+2^2+...+n^2+(n+1)^2=\frac{n(n+1)(2n+1)}{6} + (n+1)^2
+            $$
+
+            $$
+            =(n+1)(\frac{n(2n+1)}{6} + (n+1))=(n+1)(\frac{2n^2+n+6n+6}{6})
+            $$
+
+            $$
+            =(n+1)(\frac{2n^2+7n+6}{6})=\frac{(n+1)(2n(n+2)+3(n+2))}{6}
+            $$
+
+            $$
+            =\frac{(n+1)(n+2)(2(n+1)+1)}{6}=\frac{s(n)(s(n)+1)(2s(n)+1)}{6}
+            $$
+
+            Portanto $s(n)\in S$. E pelo Princípio da Indução Finita,
+            é verdadeiro para todos os números naturais.
+
+        \end{enumerate}
+
+      \item $\frac{1}{1\cdot
+        2}+\frac{1}{2\cdot3}+...+\frac{1}{n(n+1)}=\frac{n}{n+1}$
+
+        \textbf{Solução:}
+
+        Considere o conjunto $S=\{n\in\mathbb
+        N:\frac{1}{1\cdot2}+\frac{1}{2\cdot3}+...+\frac{1}{n(n+1)}=\frac{n}{n+1}\}$
+
+        \begin{enumerate}[$1.$]
+          \item Para $n=1$, $\frac{1}{1(1+1)}=\frac{1}{1+1}$. Portanto $1\in S$
+
+          \item Suponha que $n\in S$
+
+            $$
+            \frac{1}{1\cdot2}+\frac{1}{2\cdot3}+...+\frac{1}{n(n+1)}=\frac{n}{n+1}
+            $$
+
+            Adicionando $\frac{1}{(n+1)(n+2)}$ de ambos os lados:
+
+            $$
+            =\frac{n}{n+1}+\frac{1}{(n+1)(n+2)}=\frac{n(n+2)}{(n+1)(n+2)}+\frac{1}{(n+1)(n+2)}
+            $$
+
+            $$
+            =\frac{n^2+2n+1}{(n+1)(n+2)}=\frac{n(n+1)+(n+1)}{(n+1)(n+2)}=\frac{(n+1)(n+1)}{(n+1)(n+2)}=
+            $$
+
+            Simplificando:
+
+            $$
+            =\frac{n+1}{n+2}=\frac{s(n)}{s(n)+1}
+            $$
+
+            Portanto $s(n)\in S$. E pelo Princípio da Indução Finita,
+            é verdadeiro para todos os números naturais.
+
+        \end{enumerate}
+
+    \end{enumerate}
+
+  \item Uma progressão aritmética (PA) é uma sequência de números reais
+    ($a_n$) tal que $a_1$ é dado e, para todo $n\in\mathbb N$, tem-se
+
+    {\center$a_{n+1}=a_n+r$\endcenter}
+
+    \hbox{onde $r$ é um número real fixo chamado razão}
+
+    \begin{enumerate}[\bfseries (a)]
+      \item Mostre que $a_n=a_1+(n-1)r$
+
+        \textbf{Solução:}
+
+        Considere o conjunto $S=\{n\in\mathbb N:a_n=a_1+(n-1)r\}$
+
+        \begin{enumerate}[$1.$]
+          \item Para $n=1$, $a_1=a_1+(1-1)r=a_1$. Portanto $1\in S$
+
+          \item Suponha que $n\in S$ de modo que $a_n=a_1+(n-1)r$
+
+            Pela definição:
+
+            $$
+            a_{n+1}=a_n+r
+            $$
+
+            E usando a hipótese:
+
+            $$
+            a_{n+1}=a_1+(n-1)r+r=a_1+nr
+            $$
+
+            Portanto $n+1\in S$. E pelo Princípio da Indução Finita,
+            é verdadeiro para todos os números naturais.
+
+        \end{enumerate}
+
+      \item Se $a_n=a_1+a_2+...+a_n$. Mostre que
+        $S_n=na_1+\frac{n(n-1)r}{2}=\frac{(a_1+a_n)n}{2}$
+
+        \textbf{Solução:}
+
+        Considere o conjunto $S=\{n\in\mathbb
+        N:S_n=na_1+\frac{n(n-1)r}{2}\}$
+
+        \begin{enumerate}[$1.$]
+          \item Para $n=1$, $S_n=1a_1+\frac{1(1-1)r}{2}=a_1$. Portanto $1\in S$
+
+          \item Suponha que $n\in S$
+
+            Sabendo que $S_{n+1}=S_n+a_{n+1}$, utilizando (a) e
+            assumindo a hipótese:
+
+            $$
+            S_{n+1}=na_1+\frac{n(n-1)r}{2}+a_{n+1}=na_1+\frac{n(n-1)r}{2}+a_1+nr
+            $$
+
+            $$
+            =(n+1)a_1+\frac{n^2r-nr+2nr}{2}=(n+1)a_1+\frac{n(n+1)r}{2}=s(n)a_1+\frac{s(n)(s(n)-1)r}{2}
+            $$
+
+            Portanto $n+1\in S$. E pelo Princípio da Indução Finita,
+            é verdadeiro para todos os números naturais.
+
+            E podemos provar a relação de igualdade também:
+
+            $$
+            na_1+\frac{n(n-1)r}{2}=\frac{2na_1+n(n-1)r}{2}
+            $$
+
+            $$
+            =\frac{n(a_1+a_1+(n-1)r)}{2}=\frac{n(a_1+a_n)}{2}
+            $$
+
+        \end{enumerate}
+    \end{enumerate}
+
+    \newpage
+
+  \item Prove por indução.
+
+    \begin{enumerate}[\bfseries (a)]
+      \item $2^n>n$ para todo $n\in\mathbb N$
+
+        \textbf{Solução:}
+
+        Seja $S=\{n\in\mathbf N:2^n>n\}$.
+        \begin{enumerate}[1.]
+          \item $2^n = 2 > 1$. Portanto $1\in S$
+          \item Suponha que $n\in S$
+
+            Podemos multiplicar ambos os lados por $2$:
+
+            $$
+            2^n\cdot2 > 2n
+            $$
+
+            $$
+            2^{n+1} > 2n
+            $$
+
+            Como $n$ é positivo, logo: $2n = n + n > n + 1$
+
+            $$
+            2^{n+1} > 2n > n + 1\implies 2^{s(n)}>s(n)
+            $$
+
+            E portanto $s(n)\in S$. E pelo Princípio da Indução
+            Finita a propriedade é valida para todos os números naturais.
+
+        \end{enumerate}
+    \end{enumerate}
+
+\end{enumerate}
 
 \end{document}
