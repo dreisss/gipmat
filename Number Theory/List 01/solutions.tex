@@ -48,7 +48,6 @@
           \item Considere $k\in S$, de modo que $(a^m)^k=a^{m\cdot k}$
 
             Podemos multiplicar ambos os lados por $a^m$:
-
             $$
             (a^m)^k\cdot (a^m)=a^{m\cdot k}\cdot a^m
             $$
@@ -70,13 +69,11 @@
           \item Considere $k\in S$, de modo que $(a^k)^n=a^{k\cdot n}$
 
             Utilizando a propriedade (b):
-
             $$
             (a^{k+1})^n=(a^k\cdot a)^n=(a^k)^n\cdot a^n
             $$
 
             E aplicando a hipótese:
-
             $$
             (a^{s(k)})^n=a^{k\cdot n}\cdot a^n=a^{k\cdot n+n}=a^{n\cdot s(k)}
             $$
@@ -99,7 +96,6 @@
           \item Suponha que $k\in S$ tal que $(a\cdot b)^k=a^k\cdot b^k$.
 
             Multiplicamos ambos os lados por $(a\cdot b)$ e desenvolvendo:
-
             $$
             (a\cdot b)^k(a\cdot b)=a^k\cdot b^k\cdot a\cdot b
             $$
@@ -199,6 +195,8 @@
 
     \end{enumerate}
 
+    \newpage
+
   \item Uma progressão aritmética (PA) é uma sequência de números reais
     ($a_n$) tal que $a_1$ é dado e, para todo $n\in\mathbb N$, tem-se
 
@@ -211,68 +209,53 @@
 
         \textbf{Solução:}
 
-        Considere o conjunto $S=\{n\in\mathbb N:a_n=a_1+(n-1)r\}$
+        Sabemos pela definição que:
 
-        \begin{enumerate}[$1.$]
-          \item Para $n=1$, $a_1=a_1+(1-1)r=a_1$. Portanto $1\in S$
+        $$
+        \begin{cases}
+          a_{n}-a_{n-1}=r\\
+          a_{n-1}-a_{n-2}=r\\
+          ...\\
+          a_3-a_2=r\\
+          a_2-a_1=r
+        \end{cases}
+        $$
 
-          \item Suponha que $n\in S$ de modo que $a_n=a_1+(n-1)r$
+        Somando as $n-1$ equações os termos intermediários se anulam,
+        resultando em:
 
-            Pela definição:
+        $$
+        a_n-a_1=(n-1)r\implies a_n=a_1+(n-1)r
+        $$
 
-            $$
-            a_{n+1}=a_n+r
-            $$
+        Como se queria demonstrar.
 
-            E usando a hipótese:
-
-            $$
-            a_{n+1}=a_1+(n-1)r+r=a_1+nr
-            $$
-
-            Portanto $n+1\in S$. E pelo Princípio da Indução Finita,
-            é verdadeiro para todos os números naturais.
-
-        \end{enumerate}
-
-      \item Se $a_n=a_1+a_2+...+a_n$. Mostre que
+      \item Se $S_n=a_1+a_2+...+a_n$. Mostre que
         $S_n=na_1+\frac{n(n-1)r}{2}=\frac{(a_1+a_n)n}{2}$
 
         \textbf{Solução:}
 
-        Considere o conjunto $S=\{n\in\mathbb
-        N:S_n=na_1+\frac{n(n-1)r}{2}\}$
+        Utilizando (a):
+        $$
+        S_n=a_1+(a_1+(2-1)r)+(a_1+(3-1)r)+...+(a_1+((n-1)-1)r)+(a_1+(n-1)r)
+        $$
 
-        \begin{enumerate}[$1.$]
-          \item Para $n=1$, $S_n=1a_1+\frac{1(1-1)r}{2}=a_1$. Portanto $1\in S$
+        Teremos $n$ termos $a_1$:
+        $$
+        S_n=na_1+(1r+2r+...+(n-1)r)=na_1+r(1+2+...+(n-1))
+        $$
 
-          \item Suponha que $n\in S$
+        Considerando a soma dos $n$ primeiros inteiros
+        $1+2+...+n=\frac{n(n+1)}{2}$:
+        $$
+        S_n=na_1 +\frac{(n-1)((n-1)+1)r}{2}=na_1 +\frac{n(n-1)r}{2}
+        $$
 
-            Sabendo que $S_{n+1}=S_n+a_{n+1}$, utilizando (a) e
-            assumindo a hipótese:
+        Agora considerando o termo de $a_n$ e reorganizando:
+        $$
+        S_n=n(\frac{a_1+a_1+(n-1)r}{2})=\frac{(a_1+a_n)n}{2}
+        $$
 
-            $$
-            S_{n+1}=na_1+\frac{n(n-1)r}{2}+a_{n+1}=na_1+\frac{n(n-1)r}{2}+a_1+nr
-            $$
-
-            $$
-            =(n+1)a_1+\frac{n^2r-nr+2nr}{2}=(n+1)a_1+\frac{n(n+1)r}{2}=s(n)a_1+\frac{s(n)(s(n)-1)r}{2}
-            $$
-
-            Portanto $n+1\in S$. E pelo Princípio da Indução Finita,
-            é verdadeiro para todos os números naturais.
-
-            E podemos provar a relação de igualdade também:
-
-            $$
-            na_1+\frac{n(n-1)r}{2}=\frac{2na_1+n(n-1)r}{2}
-            $$
-
-            $$
-            =\frac{n(a_1+a_1+(n-1)r)}{2}=\frac{n(a_1+a_n)}{2}
-            $$
-
-        \end{enumerate}
     \end{enumerate}
 
     \newpage
@@ -286,8 +269,8 @@
 
         Seja $S=\{n\in\mathbf N:2^n>n\}$.
         \begin{enumerate}[1.]
-          \item $2^n = 2 > 1$. Portanto $1\in S$
-          \item Suponha que $n\in S$
+          \item $2^1 = 2 > 1$. Portanto $1\in S$
+          \item Suponha que $n\in S, n\ne 1$
 
             Podemos multiplicar ambos os lados por $2$:
 
